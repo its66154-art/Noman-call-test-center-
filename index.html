@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050b1b">
+  <title>NOMAN | Call Test Center</title>
+  <style>
+    :root {
+      --bg: #050b1b;
+      --panel: rgba(8, 25, 53, .88);
+      --blue: #08b9ff;
+      --blue2: #2457ff;
+      --green: #00e68a;
+      --muted: #9fb5d6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: #f4f8ff;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(ellipse at 5% 0%, rgba(0,111,255,.32), transparent 35%),
+        radial-gradient(ellipse at 100% 100%, rgba(35,55,255,.25), transparent 32%),
+        var(--bg);
+    }
+    .wrap { width: min(920px, 100%); margin: auto; padding: 22px 16px 34px; }
+    header { display:flex; justify-content:space-between; align-items:center; }
+    .menu { font-size: 27px; color: #dcecff; }
+    .online {
+      color: var(--green); border: 1px solid rgba(0,230,138,.45);
+      background: rgba(0,230,138,.09); border-radius: 30px;
+      padding: 9px 15px; font-weight: 700; font-size: 14px;
+    }
+    .hero { text-align:center; padding: 30px 8px 26px; }
+    .crown { font-size: 54px; filter: drop-shadow(0 0 12px var(--blue)); }
+    h1 {
+      margin: 2px 0 0; font-size: clamp(48px, 12vw, 78px);
+      letter-spacing: 3px; font-weight: 900;
+      background: linear-gradient(100deg,#fff 15%,#52d8ff 55%,#3970ff);
+      -webkit-background-clip: text; color: transparent;
+      text-shadow: 0 0 28px rgba(0,153,255,.22);
+    }
+    .subtitle { margin: 4px 0 10px; font-size: clamp(20px,5vw,30px); font-weight: 800; }
+    .tagline { color: var(--muted); font-style: italic; }
+    .panel {
+      border: 1px solid rgba(0,174,255,.8);
+      background: linear-gradient(145deg,rgba(5,37,73,.94),rgba(3,12,30,.96));
+      border-radius: 25px; padding: 24px 20px;
+      box-shadow: 0 0 24px rgba(0,140,255,.15), inset 0 0 22px rgba(0,130,255,.05);
+    }
+    .mode {
+      display: table; margin: 0 auto 16px; padding: 9px 19px;
+      color: #6bffb9; background: rgba(0,210,100,.17);
+      border: 1px solid rgba(0,230,138,.55); border-radius: 25px;
+      font-weight: 800; letter-spacing: 1px;
+    }
+    .welcome { text-align:center; font-size: 21px; font-weight: 700; margin: 0 0 7px; }
+    .hint { text-align:center; color: var(--muted); margin: 0 0 24px; line-height: 1.5; }
+    label { display:block; font-weight:700; margin: 0 0 12px; font-size: 18px; }
+    input {
+      width:100%; padding: 18px 17px; color:#fff; font-size:19px;
+      border:1px solid #237cff; border-radius:18px; outline:none;
+      background:rgba(16,39,75,.85); box-shadow:0 0 15px rgba(0,100,255,.1);
+    }
+    input:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,185,255,.13); }
+    input::placeholder { color:#93a9c8; }
+    button {
+      width:100%; margin-top:19px; border:0; border-radius:18px;
+      padding:17px 14px; color:white; font-size:18px; font-weight:800;
+      background:linear-gradient(100deg,#08baff,#2449ff);
+      box-shadow:0 8px 24px rgba(0,100,255,.28); cursor:pointer;
+    }
+    button:active { transform:scale(.99); }
+    .status {
+      margin-top:22px; padding:19px; border:1px solid rgba(0,230,138,.42);
+      border-radius:20px; background:rgba(0,95,58,.13);
+    }
+    .status-top { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .status-title { font-size:18px; font-weight:700; }
+    .ready { color:var(--green); font-weight:800; background:rgba(0,230,138,.12); padding:8px 14px; border-radius:24px; }
+    #message { margin-top:13px; color:#8fffc6; line-height:1.5; }
+    .features { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:20px; }
+    .feature {
+      text-align:center; padding:18px 8px; border:1px solid rgba(54,122,255,.38);
+      border-radius:18px; background:rgba(8,23,54,.75);
+    }
+    .feature .ico { font-size:27px; }
+    .feature strong { display:block; margin:8px 0 5px; font-size:14px; }
+    .feature small { color:var(--muted); font-size:12px; }
+    footer { text-align:center; color:#8299bb; padding:28px 0 5px; }
+    footer b { color:var(--blue); }
+    .note { color:#8094b2; font-size:12px; text-align:center; line-height:1.5; margin-top:16px; }
+    @media (max-width:480px) {
+      .wrap { padding:18px 13px 26px; }
+      .panel { padding:22px 15px; }
+      .features { gap:8px; }
+      .feature { padding:15px 5px; }
+      .feature strong { font-size:12px; }
+      .feature small { font-size:10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="menu" aria-label="Menu">☰</div>
+      <div class="online">● Online</div>
+    </header>
+
+    <section class="hero">
+      <div class="crown">♛</div>
+      <h1>NOMAN</h1>
+      <div class="subtitle">CALL TEST CENTER</div>
+      <div class="tagline">Test • Check • Stay Connected</div>
+    </section>
+
+    <section class="panel">
+      <div class="mode">⚗ TEST MODE</div>
+      <p class="welcome">👋 Welcome to Call Test Center</p>
+      <p class="hint">Enter a phone number to validate a demo test request</p>
+
+      <form id="testForm">
+        <label for="phone">📞 Enter Phone Number</label>
+        <input id="phone" type="tel" inputmode="tel" autocomplete="tel"
+               placeholder="+8801XXXXXXXXX" maxlength="14" required>
+        <button type="submit">➤ &nbsp; Submit Test Request</button>
+      </form>
+
+      <div class="status" aria-live="polite">
+        <div class="status-top">
+          <span class="status-title">〽 Request Status</span>
+          <span class="ready" id="statusBadge">● Ready</span>
+        </div>
+        <div id="message">✓ System is ready for a demo request.</div>
+      </div>
+    </section>
+
+    <section class="features" aria-label="Features">
+      <div class="feature"><div class="ico">⚡</div><strong>Fast Response</strong><small>Quick & Reliable</small></div>
+      <div class="feature"><div class="ico">🛡️</div><strong>Demo Safe</strong><small>No calls sent</small></div>
+      <div class="feature"><div class="ico">▥</div><strong>Test Status</strong><small>Local preview</small></div>
+    </section>
+
+    <p class="note">Demo only: this page does not place calls, send SMS, or transmit the entered number.</p>
+    <footer>Made with ❤️ by <b>NOMAN</b></footer>
+  </main>
+
+  <script>
+    const form = document.getElementById('testForm');
+    const phone = document.getElementById('phone');
+    const message = document.getElementById('message');
+    const badge = document.getElementById('statusBadge');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const value = phone.value.trim();
+      const valid = /^\+8801[3-9]\d{8}$/.test(value);
+
+      if (!valid) {
+        badge.textContent = '● Check Number';
+        badge.style.color = '#ffd166';
+        message.textContent = 'Please enter a valid Bangladesh mobile number in +8801XXXXXXXXX format.';
+        message.style.color = '#ffd166';
+        phone.focus();
+        return;
+      }
+
+      badge.textContent = '● Demo Complete';
+      badge.style.color = '#00e68a';
+      message.textContent = '✓ Demo request validated successfully. No call or message was sent.';
+      message.style.color = '#8fffc6';
+    });
+  </script>
+</body>
+</html>
